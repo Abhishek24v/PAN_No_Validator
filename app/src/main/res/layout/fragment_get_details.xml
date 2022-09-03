@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    tools:context=".ui.GetDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/title"
+            android:textColor="@color/orange"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="32dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/first_of_few_steps_to_set_you_up_with_a_bank_account"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pan_no_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/hind_semi_bold"
+            android:text="@string/pan_number_text"
+            android:textAllCaps="true"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/pan_input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/custom_input"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/poppins_medium"
+            android:inputType="textCapCharacters"
+            android:maxLength="10"
+            android:paddingStart="15dp"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@color/light_blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pan_no_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dob_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/hind_semi_bold"
+            android:text="@string/birthdate"
+            android:textAllCaps="true"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pan_input" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/dob_date_input"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/custum_input_dob"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="2"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@color/light_purple"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dob_text" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/dob_month_input"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:background="@drawable/custum_input_dob"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="2"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@color/light_purple"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/dob_year_input"
+            app:layout_constraintStart_toEndOf="@id/dob_date_input"
+            app:layout_constraintTop_toBottomOf="@id/dob_text" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/dob_year_input"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/custum_input_dob"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@color/light_purple"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dob_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="24dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/hind_semi_bold"
+            android:gravity="bottom"
+            android:lineSpacingExtra="-5dp"
+            android:paddingTop="24dp"
+            android:text="@string/description"
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/next_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dob_year_input"
+            app:layout_constraintVertical_bias="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="24dp"
+            android:background="@drawable/custom_button"
+            android:text="@string/next_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/dont_have_pan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dont_have_pan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/i_don_t_have_pan"
+            android:textColor="@color/light_purple"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
