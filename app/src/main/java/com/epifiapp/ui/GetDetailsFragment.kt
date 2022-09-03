@@ -8,10 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.epifiapp.databinding.FragmentGetDetailsBinding
-import com.epifiapp.utils.afterTextChanged
-import com.epifiapp.utils.isButtonEnable
-import com.epifiapp.utils.isValidDob
-import com.epifiapp.utils.isValidPan
+import com.epifiapp.utils.*
 
 class GetDetailsFragment : Fragment() {
 
@@ -44,18 +41,22 @@ class GetDetailsFragment : Fragment() {
     private fun setClicks() {
         binding.apply {
             panInput.afterTextChanged {
+                if (it.length == 10) dobDateInput.requestFocus()
                 nextButton.isButtonEnable(validateEntries(panInput.text.toString(), getDob()))
                 viewModel.updatePAN(panInput.text.toString())
             }
             dobDateInput.afterTextChanged {
+                if (it.length == 2) dobMonthInput.requestFocus()
                 nextButton.isButtonEnable(validateEntries(panInput.text.toString(), getDob()))
                 viewModel.updateDate(dobDateInput.text.toString())
             }
             dobMonthInput.afterTextChanged {
+                if (it.length == 2) dobYearInput.requestFocus()
                 nextButton.isButtonEnable(validateEntries(panInput.text.toString(), getDob()))
                 viewModel.updateMonth(dobMonthInput.text.toString())
             }
             dobYearInput.afterTextChanged {
+                if (it.length == 4) activity?.hideKeyboard(dobYearInput)
                 nextButton.isButtonEnable(validateEntries(panInput.text.toString(), getDob()))
                 viewModel.updateYear(dobYearInput.text.toString())
             }
